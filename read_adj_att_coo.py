@@ -6,8 +6,7 @@ adjacentList = {}
 f = open("C:\\Users\\Owner\\Desktop\\adjacentList.txt", "r")
 cnt = 1
 for l in f:
-    #print("cnt is ", cnt, "contents : ", l)
-    if cnt % 2 == 1: # cnt = 10, cnt % 2 == 0. cnt = 11, cnt % 2 == 1
+    if cnt % 2 == 1:
         target = int(l) 
     else:
         neis = l.rstrip("\n").split(",")
@@ -42,10 +41,10 @@ for l in f:
         cnt = 1
         continue
     else:
-        if cnt % 2 == 1: # this means cnt is odd number.
+        if cnt % 2 == 1:
             edge_attr.append(float(l.rstrip("\n"))) # length is appended
             cnt += 1
-        elif cnt % 2 == 0: # this means cnt is even number. just "else:" is ok.
+        elif cnt % 2 == 0:
             edge_attr.append(l.rstrip("\n")) # category is appended
             edges.append(edge_attr)
             edge_attr = []
